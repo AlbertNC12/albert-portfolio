@@ -61,7 +61,6 @@
   html { scroll-behavior: smooth; }
   body { margin: 0; background: var(--color-background); color: var(--color-foreground); }
   button, a { outline-color: var(--color-ring); }
-  :where(lovable-badge, #lovable-badge, .lovable-badge, [data-lovable-badge], [aria-label="Made with Lovable"], [title="Made with Lovable"], iframe[title="Made with Lovable"]) { display: none !important; }
 }
 
 @utility section-band {

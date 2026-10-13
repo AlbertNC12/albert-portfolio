@@ -16,9 +16,8 @@ import {
   ShieldCheck,
   X,
 } from "lucide-react";
-import portrait from "@/assets/portrait.png";
-import cv from "@/assets/cv.pdf.asset.json";
 import { Button } from "@/components/ui/button";
+
 
 const projects = [
   {
@@ -168,20 +167,16 @@ function Index() {
       </header>
 
       <section id="top" className="relative border-b border-border bg-background pt-28 lg:pt-24">
-        <div className="mx-auto grid max-w-6xl items-center gap-7 px-6 lg:min-h-[630px] lg:grid-cols-[1fr_0.9fr_0.8fr] lg:gap-10 lg:px-10">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 lg:min-h-[500px] lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 lg:px-10 lg:py-20">
           <div className="relative z-10 self-center pt-4 lg:pt-0">
             <p className="eyebrow">Computer Science student</p>
-            <h1 className="mt-5 max-w-md font-display text-5xl font-semibold leading-[0.95] md:text-7xl">Albert<br />Nicholas<br />Chandra.</h1>
+            <h1 className="mt-5 max-w-xl font-display text-5xl font-semibold leading-[0.95] md:text-7xl">Albert<br />Nicholas<br />Chandra.</h1>
             <span className="mt-6 block h-1 w-12 bg-primary" />
           </div>
 
-          <div className="relative mx-auto aspect-square w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[470px] lg:self-end">
-            <img src={portrait} alt="Albert Nicholas Chandra" className="h-full w-full object-contain" />
-          </div>
-
-          <div className="relative z-10 hidden max-w-xs justify-self-end lg:block">
+          <div className="relative z-10 max-w-md self-center lg:justify-self-end">
             <p className="eyebrow">Introduction</p>
-            <h2 className="mt-5 font-display text-2xl font-medium leading-tight">Software engineer building AI products end to end.</h2>
+            <h2 className="mt-5 font-display text-2xl font-medium leading-tight md:text-3xl">Software engineer building AI products end to end.</h2>
             <p className="mt-5 text-sm leading-7 text-muted-foreground">I turn ideas into working products — from machine-learning models and APIs to interfaces people can use.</p>
             <a href="#about" className="action-link mt-7">My story <ArrowRight size={16} /></a>
           </div>
@@ -297,7 +292,8 @@ function Index() {
           <div className="space-y-7">
             <a href="mailto:albert.nicholaschandra@gmail.com" className="contact-line"><Mail size={18} /><span>albert.nicholaschandra@gmail.com</span><ArrowRight size={16} /></a>
             <a href="https://github.com/AlbertNC12" target="_blank" rel="noreferrer" className="contact-line"><Github size={18} /><span>github.com/AlbertNC12</span><ArrowRight size={16} /></a>
-            <a href={cv.url} download="Albert-Nicholas-Chandra-CV.pdf" className="contact-line"><Code2 size={18} /><span>Download my CV</span><ArrowRight size={16} /></a>
+            <a href="/Albert-Nicholas-Chandra-CV.pdf" download="Albert-Nicholas-Chandra-CV.pdf" className="contact-line"><Code2 size={18} /><span>Download my CV</span><ArrowRight size={16} /></a>
+
           </div>
         </div>
       </section>
