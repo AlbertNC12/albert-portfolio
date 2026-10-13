@@ -1,0 +1,158 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-overlay: var(--overlay);
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(0.21 0.018 266);
+  --foreground: oklch(0.95 0.008 90);
+  --card: oklch(0.235 0.02 266);
+  --card-foreground: oklch(0.95 0.008 90);
+  --popover: oklch(0.235 0.02 266);
+  --popover-foreground: oklch(0.95 0.008 90);
+  --primary: oklch(0.79 0.15 78);
+  --primary-foreground: oklch(0.19 0.018 266);
+  --secondary: oklch(0.28 0.018 266);
+  --secondary-foreground: oklch(0.95 0.008 90);
+  --muted: oklch(0.27 0.015 266);
+  --muted-foreground: oklch(0.69 0.012 265);
+  --accent: oklch(0.79 0.15 78);
+  --accent-foreground: oklch(0.19 0.018 266);
+  --destructive: oklch(0.62 0.22 28);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.36 0.018 266);
+  --input: oklch(0.36 0.018 266);
+  --ring: oklch(0.79 0.15 78);
+  --overlay: oklch(0.1 0.015 266 / 88%);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--color-background); color: var(--color-foreground); }
+  button, a { outline-color: var(--color-ring); }
+  :where(lovable-badge, #lovable-badge, .lovable-badge, [data-lovable-badge], [aria-label="Made with Lovable"], [title="Made with Lovable"], iframe[title="Made with Lovable"]) { display: none !important; }
+}
+
+@utility section-band {
+  background: var(--color-card);
+  border-bottom: 1px solid var(--color-border);
+}
+
+@utility eyebrow {
+  color: var(--color-primary);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@utility nav-link {
+  color: var(--color-muted-foreground);
+  transition: color 180ms ease;
+  &:hover { color: var(--color-primary); }
+}
+
+@utility action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--color-primary);
+  padding-bottom: 0.35rem;
+  color: var(--color-primary);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+@utility stat {
+  display: inline-block;
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 3rem;
+  line-height: 1;
+}
+
+@utility stat-label {
+  display: inline-block;
+  margin-left: 0.65rem;
+  color: var(--color-muted-foreground);
+  font-size: 0.625rem;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+@utility capability {
+  min-height: 15rem;
+  padding: 2rem;
+  background: var(--color-secondary);
+  border: 1px solid var(--color-border);
+  color: var(--color-foreground);
+}
+
+@utility capability-featured {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+@utility row-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  padding: 1.15rem 0;
+  transition: color 180ms ease;
+  & strong { display: block; font-size: 0.875rem; font-weight: 600; }
+  & small { display: block; margin-top: 0.3rem; color: var(--color-muted-foreground); font-size: 0.6875rem; }
+  &:hover { color: var(--color-primary); }
+}
+
+@utility contact-line {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.25rem;
+  color: var(--color-muted-foreground);
+  font-size: 0.875rem;
+  transition: color 180ms ease;
+  & span { overflow-wrap: anywhere; }
+  &:hover { color: var(--color-primary); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
