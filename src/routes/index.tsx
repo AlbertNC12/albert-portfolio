@@ -12,6 +12,7 @@ import {
   Link2,
   Mail,
   Menu,
+  Phone,
   ScanSearch,
   ShieldCheck,
   X,
@@ -89,11 +90,20 @@ const capabilities = [
 ];
 
 const certifications = [
-  ["Go", "HackerRank", "13 Nov 2026", "https://shorturl.at/xGO2M"],
-  ["Python", "HackerRank", "8 Aug 2026", "https://shorturl.at/9cG0G"],
-  ["AI for Business Professionals", "HP", "14 Jul 2026", "https://shorturl.at/OHfkM"],
-  ["AI for Beginners", "HP", "14 Jul 2026", "https://shorturl.at/L9EED"],
-  ["Databases for Developers: Foundations", "Oracle Dev Gym", "11 Oct 2025", "https://shorturl.at/O9Z6j"],
+  ["Python", "HackerRank", "Aug 2026", "https://shorturl.at/9cG0G"],
+  ["AI for Business Professionals", "HP", "Jul 2026", "https://shorturl.at/OHfkM"],
+  ["Databases for Developers: Foundations", "Oracle Dev Gyms", "Oct 2026", "https://shorturl.at/O9Z6j"],
+  ["Go", "HackerRank", "Nov 2026", "https://shorturl.at/xGO2M"],
+  ["AI for Beginners", "HP", "Jul 2026", "https://shorturl.at/L9EED"],
+];
+
+const awards = [
+  {
+    title: "NASA Space Apps Challenge",
+    issuer: "NASA",
+    date: "2022",
+    url: "https://tinyurl.com/2efys3ax",
+  },
 ];
 
 const volunteering = [
@@ -258,6 +268,18 @@ function Index() {
                   </a>
                 ))}
               </div>
+
+              <div className="mt-12">
+                <p className="eyebrow">Recognition</p>
+                <h3 className="mt-3 font-display text-2xl font-medium">Awards.</h3>
+                <div className="mt-6 border-t border-border">
+                  {awards.map((award) => (
+                    <a key={award.title} href={award.url} target="_blank" rel="noreferrer" className="row-link">
+                      <span><strong>{award.title}</strong><small>{award.issuer} · {award.date}</small></span><ArrowRight size={16} />
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
             <div>
               <p className="eyebrow">Community</p>
@@ -291,6 +313,7 @@ function Index() {
           </div>
           <div className="space-y-7">
             <a href="mailto:albert.nicholaschandra@gmail.com" className="contact-line"><Mail size={18} /><span>albert.nicholaschandra@gmail.com</span><ArrowRight size={16} /></a>
+            <a href="tel:+628112078781" className="contact-line"><Phone size={18} /><span>08112078781</span><ArrowRight size={16} /></a>
             <a href="https://github.com/AlbertNC12" target="_blank" rel="noreferrer" className="contact-line"><Github size={18} /><span>github.com/AlbertNC12</span><ArrowRight size={16} /></a>
             <a href="/Albert-Nicholas-Chandra-CV.pdf" download="Albert-Nicholas-Chandra-CV.pdf" className="contact-line"><Code2 size={18} /><span>Download my CV</span><ArrowRight size={16} /></a>
 
